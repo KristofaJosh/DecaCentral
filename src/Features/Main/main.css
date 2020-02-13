@@ -1,0 +1,10 @@
+.main {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.inner-main {
+    width: 90%;
+}

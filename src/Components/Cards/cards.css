@@ -1,0 +1,36 @@
+#card {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin: 2rem 0;
+}
+
+.card {
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    padding: 2rem;
+    color: #2D2F48;
+}
+
+.card-text {
+    width: 60%;
+    font-size: 2rem;
+}
+
+.card-text span {
+    margin-left: 1rem;
+}
+
+.card-logo img {
+    width: 100%;
+}
+
+.card-logo {
+    width: 25%;
+}
+
+.small {
+    border-radius: 1rem;
+}

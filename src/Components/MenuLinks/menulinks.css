@@ -1,0 +1,11 @@
+.onhover {
+    color: #fff;
+}
+
+.onhover:hover {
+    color: #2D2F48;
+}
+
+/* .active {
+    color: #2D2F48;
+} */

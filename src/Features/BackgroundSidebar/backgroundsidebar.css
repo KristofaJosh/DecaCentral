@@ -1,0 +1,21 @@
+.first-section {
+    background-image: linear-gradient(rgba(45, 47, 72, 0.877), rgba(9, 9, 14, 0.774)), url("./background_image.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    border-top-right-radius: 2rem;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+.container {
+    padding: 0 2rem;
+    color: #fff;
+}
+
+.container p {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
