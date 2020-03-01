@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Button({title, LinkTo, fnc}) {
     return (
-        <Link class="btn btn-success" style={buttonStyle} to={LinkTo} onClick={fnc}>{title}</Link>
+        <Link className="btn btn-success" style={buttonStyle} to={LinkTo || '#'} onClick={fnc}>{title}</Link>
     )
 }
 

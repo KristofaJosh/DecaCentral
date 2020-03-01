@@ -4,7 +4,7 @@
     height: 1080px;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -33,21 +33,30 @@
     align-items: center;
     margin-left: 2rem;
     padding-left: 1.5rem;
+    color: #fff;
 }
 
+.nav-link:hover span{
+    background-color: #fff;
+    color: #2d2f48;
+    font-weight: 900;
+}
 
 .nav-link span {
     margin: auto;
-}
-
-.nav-link img {
-    margin-right: 0.5rem;
-    width: 2rem;
+    color: #fff;
 }
 
 .active {
     background-color: #fff;
-    color: #2D2F48;
+}
+.active span {
+    color: #2D2F48 !important;
+}
+
+.nav-link img {
+    margin-right: 0.5rem;
+    width: 3rem;
 }
 
 .nav-link:hover {
@@ -60,7 +69,7 @@
     margin-top: 5rem;
 }
 
-.footer div{
+.footer div {
     color: #2D2F48;
     font-size: 1.5rem;
     font-weight: 700;

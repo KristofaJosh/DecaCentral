@@ -9,7 +9,7 @@ import axios from 'axios';
 export default function Login(props) {
 
     
-    const [logData, setLogData] = useState({username:'', password:''});
+    const [logData, setLogData] = useState({email:'', password:''});
     const [error, setError] = useState('We\'ll never share your email with anyone else.');
     const [token, setToken] = useState('');
 
@@ -18,7 +18,7 @@ export default function Login(props) {
         props.history.push('/')
     }else{
         localStorage.setItem('token_key', token)
-        console.log(token)
+        // console.log(token)
     }
 
 
@@ -28,18 +28,28 @@ export default function Login(props) {
 
     const config = {     
         headers: { 
-            'Content-type': 'application/json' 
+            'Content-type': 'application/json', 
         }
     }
 
     //send to api route
     const subForm = () => {
+
+        // http://127.0.0.1:8000/auth/token/login/
+
+        // returns token
+
+        // console.log(logData)
+
+
+
         localStorage.registered = '';
 
         if (logData.username !== '' && logData.password !== ''){
-            axios.post('http://localhost:8000/auth/', logData, config)
-            .then(res => {
-                 setToken(res.data.token)
+            axios.post('http://127.0.0.1:8000/auth/login/', logData, config)
+                .then(res => {
+                    console.log(res.data)
+                 setToken(res.data)
                 //goto dashboard
                 props.history.push('/')
 
@@ -66,17 +76,17 @@ export default function Login(props) {
         <br/>
         <form onSubmit = {subForm}>
             <h4>Login</h4>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email:</label>
-                <input type="text" name='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  onChange={formData} required></input>
+            <div className="form-group">
+                <label htmlFor="exampleInputEmail1">Email:</label>
+                <input type="email" name='email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  onChange={formData} required></input>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password:</label>
-                <input type="password" name='password' class="form-control" id="exampleInputPassword1" onChange={formData} required></input>
+            <div className="form-group">
+                <label htmlFor="exampleInputPassword1">Password:</label>
+                <input type="password" name='password' className="form-control" id="exampleInputPassword1" onChange={formData} required></input>
             </div>
-            <small id="emailHelp" class="form-text text-muted">{error}</small>
+            <small id="emailHelp" className="form-text text-muted">{error}</small>
 
-            <div class="submit-section">
+            <div className="submit-section">
                 <Button title='Login' fnc={subForm} />
                 <TextLink title='Create an account' LinkTo='/register' />
             </div>

@@ -1,6 +1,13 @@
-*{
+* {
   /* outline: 1px solid red; */
 }
+
+@media (max-width: 1500px) {
+  * {
+    font-size: 0.7rem;
+  }
+}
+
 
 body {
   margin: 0;
@@ -8,9 +15,18 @@ body {
   font-family: 'Titillium Web', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
 
-input, select {
+
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+
+input,
+select {
   border: none !important;
 }
 

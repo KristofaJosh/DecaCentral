@@ -8,7 +8,7 @@ export default function TextLink({title, LinkTo, styled, click}) {
     }
 
     return (
-        <Link style={styled} onClick={click} to={LinkTo}>{title}</Link>
+        <Link style={styled} onClick={click} to={LinkTo || '#'}>{title}</Link>
     )
 }
 

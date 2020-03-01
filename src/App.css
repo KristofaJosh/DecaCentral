@@ -5,8 +5,40 @@
 }
 
 .app-content {
-  max-width: 1920px;
+  /* max-width: 1920px; */
   width: 100%;
   display: flex;
-  background-color: #F2F6FA;    
+  background-color: #F2F6FA;
+}
+
+.for-pc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #F2F6FA;
+  font-style: Upper;
+  padding: 0 3rem;
+}
+
+@media (max-width: 1000px) {
+  .App {
+    display: none;
+  }
+}
+
+@media (max-width: 1330px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1000px) {
+  .for-pc {
+    display: none;
+  }
 }
