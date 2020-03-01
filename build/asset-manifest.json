@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0f885edd.chunk.css",
+    "main.js": "/static/js/main.b853bcda.chunk.js",
+    "main.js.map": "/static/js/main.b853bcda.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1c2d59f4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1c2d59f4.js.map",
+    "static/js/2.d5aacb53.chunk.js": "/static/js/2.d5aacb53.chunk.js",
+    "static/js/2.d5aacb53.chunk.js.map": "/static/js/2.d5aacb53.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.39d05ed8c079a914f260654525e56384.js": "/precache-manifest.39d05ed8c079a914f260654525e56384.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.0f885edd.chunk.css.map": "/static/css/main.0f885edd.chunk.css.map",
+    "static/js/2.d5aacb53.chunk.js.LICENSE.txt": "/static/js/2.d5aacb53.chunk.js.LICENSE.txt",
+    "static/media/backgroundsidebar.css": "/static/media/background_image.8ba062c1.png",
+    "static/media/decagon-logo.png": "/static/media/decagon-logo.634ed344.png",
+    "static/media/image1.png": "/static/media/image1.846d42f8.png",
+    "static/media/image2.png": "/static/media/image2.1534ff73.png",
+    "static/media/image3.png": "/static/media/image3.bfc761e1.png",
+    "static/media/image5.png": "/static/media/image5.67d43f58.png",
+    "static/media/outline.svg": "/static/media/outline.cc11e5ee.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c2d59f4.js",
+    "static/js/2.d5aacb53.chunk.js",
+    "static/css/main.0f885edd.chunk.css",
+    "static/js/main.b853bcda.chunk.js"
+  ]
+}
