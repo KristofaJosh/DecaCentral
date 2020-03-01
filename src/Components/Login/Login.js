@@ -41,7 +41,7 @@ export default function Login(props) {
 
     localStorage.registered = "";
 
-    if (logData.username !== "" && logData.password !== "") {
+    if (logData.email !== "" && logData.password !== "") {
       axios
         .post("http://127.0.0.1:8000/auth/login/", logData, config)
         .then(res => {
@@ -51,9 +51,11 @@ export default function Login(props) {
           props.history.push("/");
         })
         .catch(err => {
-          // console.log(err.response)
+          console.log(err.response);
           if (err.response.status === 400) {
             setError(["error", "Wrong Username or Password"]);
+          } else if (logData.email !== "" && err.response.status === 404) {
+            setError(["error", "User does not exist"]);
           } else {
             setError(["error", "Enter your email address"]);
           }
