@@ -51,7 +51,7 @@ export default function Login(props) {
           props.history.push("/");
         })
         .catch(err => {
-          // console.log(err.response);
+          console.log(err.response);
           if (err.response.status === 400) {
             setError(["error", "Wrong Username or Password"]);
           } else if (logData.email !== "" && err.response.status === 404) {

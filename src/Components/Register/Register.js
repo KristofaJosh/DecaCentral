@@ -29,7 +29,7 @@ export default function Register(props) {
                 setError(`${x[0].toUpperCase()+x.slice(1)} is empty, enter valid input`);
                 break;
             }
-        };
+        }
 
         if (!(regData.fullname === '' || regData.username === '' || regData.password ==='' || regData.email === '' || regData.position === '')){
             const config = {headers: { 'Content-type': 'application/json' }};
