@@ -35,7 +35,7 @@ export default function Register(props) {
             const config = {headers: { 'Content-type': 'application/json' }};
 
             
-            axios.post('http://127.0.0.1:8000/auth/users/', regData, config)
+            axios.post('https://deca-central-api.herokuapp.com/users/', regData, config)
             .then(res => {
                 if(res.status === 201){
                     localStorage.setItem('registered','Registration Successful, Please Login');

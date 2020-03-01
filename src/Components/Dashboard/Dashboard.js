@@ -55,7 +55,7 @@ export default function Dashboard(props) {
   useEffect(() => {
     if (localStorage.token_key) {
       axios
-        .get(`http://127.0.0.1:8000/auth/dashboard/${localStorage.token_key}/`)
+        .get(`https://deca-central-api.herokuapp.com/auth/dashboard/${localStorage.token_key}/`)
         .then(res => {
           setUser("Hello " + res.data.fullname);
 

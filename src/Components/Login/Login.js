@@ -43,7 +43,7 @@ export default function Login(props) {
 
     if (logData.email !== "" && logData.password !== "") {
       axios
-        .post("http://127.0.0.1:8000/auth/login/", logData, config)
+        .post("https://deca-central-api.herokuapp.com/auth/login/", logData, config)
         .then(res => {
           // console.log(res.data)
           setToken(res.data);
@@ -51,7 +51,7 @@ export default function Login(props) {
           props.history.push("/");
         })
         .catch(err => {
-          console.log(err.response);
+          // console.log(err.response);
           if (err.response.status === 400) {
             setError(["error", "Wrong Username or Password"]);
           } else if (logData.email !== "" && err.response.status === 404) {
