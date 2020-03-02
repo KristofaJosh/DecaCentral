@@ -12,6 +12,7 @@ export default function Login(props) {
     "",
     "We'll never share your email with anyone else."
   ]);
+  const [fetching,setFetching]=useState(false)
   const [token, setToken] = useState("");
 
   if (localStorage.token_key) {
@@ -42,16 +43,20 @@ export default function Login(props) {
     localStorage.registered = "";
 
     if (logData.email !== "" && logData.password !== "") {
+      setFetching(true)
       axios
         .post("https://deca-central-api.herokuapp.com/auth/login/", logData, config)
         .then(res => {
           // console.log(res.data)
           setToken(res.data);
           //goto dashboard
+          setFetching(false)
           props.history.push("/");
+
         })
         .catch(err => {
           // console.log(err.response);
+          setFetching(false)
           if (err.response.status === 400) {
             setError(["error", "Wrong Username or Password"]);
           } else if (logData.email !== "" && err.response.status === 404) {
@@ -101,7 +106,7 @@ export default function Login(props) {
           </small>
 
           <div className="submit-section">
-            <Button title="Login" fnc={subForm} />
+            <Button title={fetching?"Loading":"Login"} fnc={subForm} />
             <TextLink title="Create an account" LinkTo="/register" />
           </div>
         </form>
