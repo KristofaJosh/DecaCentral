@@ -10,6 +10,8 @@ export default function Register(props) {
     const [error, setError] = useState('');
     const [usernameError, setUsernameError] = useState({username:''});
     const [emailError, setEmailError] = useState({email:''});
+    const [fetching, setFetching] = useState(false);
+
 
 
     if(localStorage.token_key){
@@ -24,6 +26,7 @@ export default function Register(props) {
     //send to api route
     const subForm = () => {
 
+
         for (let x in regData){
             if (regData[x] === ''){
                 setError(`${x[0].toUpperCase()+x.slice(1)} is empty, enter valid input`);
@@ -32,9 +35,9 @@ export default function Register(props) {
         }
 
         if (!(regData.fullname === '' || regData.username === '' || regData.password ==='' || regData.email === '' || regData.position === '')){
-            const config = {headers: { 'Content-type': 'application/json' }};
+            setFetching(true);
 
-            
+            const config = {headers: { 'Content-type': 'application/json' }};
             axios.post('https://deca-central-api.herokuapp.com/users/', regData, config)
             .then(res => {
                 if(res.status === 201){
@@ -100,7 +103,8 @@ export default function Register(props) {
             </div>
 
             <div className="submit-section">
-                <Button title='Join Now' fnc={subForm} />
+                <Button title={fetching? <div className="spinner-border" role="status"><span className="sr-only">Loading...</span></div>
+                    : 'Join Now'} fnc={subForm} />
                 <TextLink title='Login' LinkTo='/login' />
             </div>
         </form>
@@ -108,3 +112,4 @@ export default function Register(props) {
         </>
     )
 }
+
